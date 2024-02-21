@@ -7,7 +7,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
   flyway:
     locations: classpath:db/migration
     baseline-on-migrate: true

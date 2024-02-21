@@ -16,10 +16,10 @@ loginForm.addEventListener('submit', function (event) {
     const checkbox = document.getElementById('remember');
 
     if (checkbox.checked) {
-        const username = loginForm.elements['username'].value;
+        const email = loginForm.elements['email'].value;
         const password = loginForm.elements['password'].value;
 
-        localStorage.setItem('formData', JSON.stringify({ username, password }));
+        localStorage.setItem('formData', JSON.stringify({ email, password }));
 
     } else {
         localStorage.removeItem('formData');
@@ -32,46 +32,32 @@ window.addEventListener('load', function () {
     const savedData = localStorage.getItem('formData');
 
     if (savedData) {
-        const { username, password } = JSON.parse(savedData);
+        const { email, password } = JSON.parse(savedData);
 
-        document.getElementById('username').value = username;
+        document.getElementById('email').value = email;
         document.getElementById('password').value = password;
     }
 });
 
 /*--------------------------------------------------------------------------- */
 
-/*------------------------------------------------------------------------------- */
-//Acoes de slide de background
-const main = document.querySelector('main');
-const NUM_IMAGES = 4;
-const INTERVALO = 10000;
-
-const images = [];
-for (let i = 1; i <= NUM_IMAGES; i++) {
-    const img = new Image();
-    img.src = `/src/b${i}.jpg`;
-    images.push(img);
-}
-
-function changeBackground(num) {
-    const imageIndex = num % NUM_IMAGES || NUM_IMAGES;
-
-    const imageBackground = `url(/src/b${imageIndex}.jpg)`;
-    main.style.backgroundImage = imageBackground;
-
-    setTimeout(function () {
-        changeBackground(num + 1);
-    }, INTERVALO);
-}
-changeBackground(1);
 /*--------------------------------------------------------------------------- */
 loginForm.addEventListener("submit", function(event) {
     event.preventDefault(); // Evita o envio do formulário padrão
 
-    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
+    const alertMessage = document.getElementById("alertMessage");
+    alertMessage.innerText = "Email ou senha inválidas. Por favor, tente novamente.";
+    //alertMessage.innerHTML += `<div id="load" class="load"></div>`;
+    alertMessage.classList.add('show');
+
+    setTimeout(function() {
+        alertMessage.classList.remove('show');
+    }, 2000);
+
+/*
     const loginData = {
         nomeUsuario: username,
         senha: password
@@ -97,5 +83,5 @@ loginForm.addEventListener("submit", function(event) {
             }, 3000);
         }
     })
-    .catch(error => console.error("Erro ao fazer login:", error));
+    .catch(error => console.error("Erro ao fazer login:", error));*/
 });

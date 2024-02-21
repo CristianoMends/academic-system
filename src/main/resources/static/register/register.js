@@ -9,6 +9,11 @@ btnLogin.addEventListener('click', function(event){
     registerForm.submit();
 });
 
+//--------------------------------------------------------------
+
+
+//--------------------------------------------------------------
+
 
 registerForm.addEventListener("submit", function(event) {
     event.preventDefault(); // Evita o envio do formulário padrão

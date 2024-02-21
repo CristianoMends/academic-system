@@ -14,7 +14,6 @@ data class Disciplines(
     val semester: Int,
     val grade: Float?,
 
-    @OneToMany(mappedBy = "discipline")
-    val disciplineUsers: List<UsersDisciplines> = mutableListOf()
-
+    @ManyToMany(mappedBy = "disciplines")
+    val courses: Set<Course> = HashSet()
 )
