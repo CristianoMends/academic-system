@@ -5,8 +5,8 @@ const btnCreateAccount = document.getElementById('btnCreateAccount');
 
 btnCreateAccount.addEventListener('click', function (event) {
     event.preventDefault();
-    loginForm.action = "/register";
-    loginForm.submit();
+    window.location = "/register"
+    
 });
 
 /*------------------------------------------------------------------------------- */
@@ -48,20 +48,14 @@ loginForm.addEventListener("submit", function(event) {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    const alertMessage = document.getElementById("alertMessage");
-    alertMessage.innerText = "Email ou senha inválidas. Por favor, tente novamente.";
-    //alertMessage.innerHTML += `<div id="load" class="load"></div>`;
-    alertMessage.classList.add('show');
-
-    setTimeout(function() {
-        alertMessage.classList.remove('show');
-    }, 2000);
-
-/*
     const loginData = {
-        nomeUsuario: username,
-        senha: password
+        email: email,
+        password: password
     };
+
+    const alertMessage = document.getElementById("alertMessage");
+
+
 
     fetch("/login", {
         method: "POST",
@@ -72,16 +66,23 @@ loginForm.addEventListener("submit", function(event) {
     })
     .then(response => {
         if (response.ok) {
-            window.location.href = '/main';
-        } else {
-            const alertMessage = document.getElementById("alertMessage");
-            alertMessage.textContent = "Usuário ou senha inválidas. Por favor, tente novamente.";
-            alertMessage.style.display = 'flex';
-
+            alertMessage.innerText = "Login bem sucedido!";
+            alertMessage.innerHTML += `<div id="load" class="load"></div>`;
+            alertMessage.classList.add('show');
+        
             setTimeout(function() {
-                alertMessage.style.display = 'none';
-            }, 3000);
+                alertMessage.classList.remove('show');
+                window.location = '/main';
+            }, 2000);
+        } else {
+            alertMessage.innerText = "Email ou senha inválidas. Por favor, tente novamente.";
+            //alertMessage.innerHTML += `<div id="load" class="load"></div>`;
+            alertMessage.classList.add('show');
+        
+            setTimeout(function() {
+                alertMessage.classList.remove('show');
+            }, 2000);
         }
     })
-    .catch(error => console.error("Erro ao fazer login:", error));*/
+    .catch(error => console.error("Erro ao fazer login:", error));
 });

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFC forum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fórum do Curso {course.name}</h1>
+    </header>
+    
+    <main>
+        <section id="latest-discussions">
+            <article class="latest-discussion">
+                <div id="full-discussion" class="full-discussion">
+                    <h2>{title}</h2>
+                    <p>{content}</p>
+                    <p>Autor: {user.name} | Visualizações: {views} | Data: {date}</p>
+                    
+                    <ul class="comments">
+                        <li>{user.name}: {comment}</li>
+                        <li>{user.name}: {comment}</li>
+                        <li>{user.name}: {comment}</li>
+                    </ul>
+
+                    <form action="#" method="post">
+                        <label for="comment">Comentar:</label>
+                        <input type="text" id="comment" name="comment" required>
+                        <button type="submit">Enviar</button>
+                    </form>
+                    
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

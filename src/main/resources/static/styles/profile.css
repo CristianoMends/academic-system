@@ -1,0 +1,42 @@
+
+#statistics{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#addDisciplines{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+    gap: 10px;
+}
+table{
+    width: 50%;
+    border-collapse: collapse;   
+}
+th, td {
+    border: 1px solid black;
+    padding: 1px;
+    text-align: center;
+}
+textarea{
+    border: none;
+    background-color: transparent;
+    width: 10vw;
+    resize: none;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+footer p{
+    opacity: 0.2;
+}

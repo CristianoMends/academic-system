@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="../../static/login/index.css">
+    <link rel="stylesheet" href="/login/index.css">
+    <link rel="stylesheet" href="/register/register.css">
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -18,7 +19,7 @@
 
     </header>
     <main>
-        <div class="container">
+        <div class="container register">
 
             <form action="/register/user" method="post" id="registerForm">
                 <div class="form-group">
@@ -26,7 +27,7 @@
                         <span class="material-symbols-outlined">
                             badge
                         </span>
-                        <input type="text" id="name" placeholder="Nome" pattern="[A-Za-z]+" title="Digite seu nome" required oninvalid="this.setCustomValidity('Por favor, insira um valor válido.')" oninput="setCustomValidity('')">
+                        <input type="text" id="name" placeholder="Nome" pattern="[A-Za-z]+" maxlength="25" title="Digite seu nome" required oninvalid="this.setCustomValidity('Por favor, insira um valor válido.')" oninput="setCustomValidity('')">
                     </div>
                 </div>
                 <div class="form-group">
@@ -34,7 +35,7 @@
                         <span class="material-symbols-outlined">
                             badge
                         </span>
-                        <input type="text" id="surname" placeholder="Sobrenome" pattern="[A-Za-z]+" title="Digite seu Sobrenome" required pattern="[0-9]+(\.[0-9]+)?" oninvalid="this.setCustomValidity('Por favor, insira um valor válido.')" oninput="setCustomValidity('')">
+                        <input type="text" id="surname" placeholder="Sobrenome" pattern="[A-Za-z]+" maxlength="25" title="Digite seu Sobrenome" required oninvalid="this.setCustomValidity('Por favor, insira um valor válido.')" oninput="setCustomValidity('')">
                     </div>
                 </div>
                 <div class="form-group">
@@ -57,8 +58,21 @@
                         <span class="material-symbols-outlined">
                             calendar_month
                         </span>
-                        <label for="a">Inicio</label>
-                        <input type="month" name="" id="a" >
+                        <label for="year">Inicio:</label>
+                        <select id="year" name="year">
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2022">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                        </select>
+                        <select id="semester" name="semester">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
                     </div>
                 </div>
 
@@ -96,7 +110,7 @@
     <footer>
         <p>&copy; Cristiano Mendes - 2024</p>
     </footer>
-    <script src="../../static/register/register.js"></script>
+    <script src="/register/register.js"></script>
 </body>
 
 </html>

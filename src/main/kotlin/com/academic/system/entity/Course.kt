@@ -1,8 +1,7 @@
-package com.academic.system.model
+package com.academic.system.entity
 
 import com.academic.system.enums.CoursesNames
 import jakarta.persistence.*
-import java.util.Date
 import kotlin.collections.HashSet
 
 @Entity
@@ -11,7 +10,7 @@ data class Course(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var courseId: Long? = null,
 
-    val name:String = CoursesNames.UNDEFINED.toString(),
+    val name:String,
     val totalWorkload:Int = 0,
 
     @OneToMany(mappedBy = "course")

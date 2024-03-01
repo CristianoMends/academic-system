@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping
 @Controller
 class ViewController {
 
-    @RequestMapping("/index")
-    fun view():String = "login/index"
+    @RequestMapping("/")
+    fun viewHome():String = "pages/home"
 
     @RequestMapping("/register")
-    fun viewRegister():String = "register/register"
+    fun viewRegister():String = "pages/register"
 
-    @RequestMapping("/main")
-    fun viewMain():String = "main/main"
+    @RequestMapping("/login")
+    fun viewLogin():String = "pages/login"
+
 }

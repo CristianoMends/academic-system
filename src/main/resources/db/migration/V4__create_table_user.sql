@@ -12,5 +12,6 @@ CREATE TABLE if not exists users (
    course_id BIGINT,
    CONSTRAINT pk_users PRIMARY KEY (user_id)
 );
+ALTER TABLE users ADD CONSTRAINT uc_users_email UNIQUE (email);
 
 ALTER TABLE users ADD CONSTRAINT FK_USERS_ON_COURSE FOREIGN KEY (course_id) REFERENCES course (course_id);

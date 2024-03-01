@@ -1,0 +1,22 @@
+
+main{
+    height: 100%;
+}
+.content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+}
+footer p{
+    opacity: 0.2;
+}

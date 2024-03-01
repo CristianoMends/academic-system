@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFC Forum</title>
+    <link rel="stylesheet" href="/styles/forum.css">
+    <link rel="stylesheet" href="/styles/all.css">
+</head>
+<body>
+    <header>
+        <img src="https://www.ufc.br/images/_images/a_universidade/identidade_visual/brasao/brasao1_horizontal_cor_300dpi.png" alt="brasão ufc">
+        <nav>
+            <button id="user" class="button">{username}</button>
+            <button class="button">Logout</button>            
+        </nav> 
+    </header>
+    <section class="menu">
+        <a href="/pages/home.html">Home</a>
+        <a href="#" class="active">Fórum</a>
+        <a href="/pages/profile.html">Meu perfil</a>
+    </section>
+    
+    <main>
+        <section id="latest-discussions">
+            <h2>Últimas Discussões</h2>
+            <article class="latest-discussion">
+                <h3><a href="discussion.html">{title}</a></h3>
+                <p>Autor: {user.name} | Visualizações: {views} | Data:{date}</p>
+            </article>
+            <article class="latest-discussion">
+                <h3><a href="discussion.html">{title}</a></h3>
+                <p>Autor: {user.name} | Visualizações: {views} | Data:{date}</p>
+            </article>
+            <article class="latest-discussion">
+                <h3><a href="discussion.html">{title}</a></h3>
+                <p>Autor: {user.name} | Visualizações: {views} | Data:{date}</p>
+            </article>
+        </section>
+
+        <section id="add-discussion">
+            <h2>Adicionar nova discussão</h2>
+            <form action="#" method="post">
+                <label for="title">Título:</label>
+                <input type="text" id="title" placeholder="Digite o titulo aqui" name="title" required>
+                <label for="content">Conteúdo:</label>
+                <textarea id="content" name="content" placeholder="Digite o conteúdo aqui" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Cristiano Mendes - 2024</p>
+    </footer>
+</body>
+</html>

@@ -1,30 +1,11 @@
-@media only screen and (max-width: 600px) {
-   .container{
-        display: flex;
-        justify-content: center;
-        width: 250px;
-    }
-   .extra-content{display: none;}
-}
 
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-    .container{ width: 500px;}
-    .extra-content{
-        display: flex;
-    }
-}
-
-@media only screen and (min-width: 1025px) {
-    .container{ width: 500px; }
-    .extra-content{ display: flex; }    
-}
 
 body{
     margin: 0;
     background-color: black;
     
 }
-head, footer{
+footer{
     background-color: rgb(0, 83, 134);
     display: flex;
     flex-direction: column;
@@ -32,13 +13,12 @@ head, footer{
     align-items: center;
     opacity: 1;
     color: white;
-    padding: 15px;
     font-size: smaller;
 }
 
 
 main{
-    background-image: url("../../static/src/ufc.jpg");
+    background-image: url("../src/ufc.jpg");
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -50,6 +30,7 @@ main{
     
 }
 .container{
+    width: 50vw;
     display: flex;
     border-radius: 10px;
     opacity: 0.9;
@@ -58,25 +39,24 @@ main{
 }
 .extra-content{
     align-items: center;
+    text-align: center;
     flex-direction: column;
     border-left:1px solid rgba(0, 0, 0, 0.2);
-    width: 200px;
     border-radius: 0 10px 10px 0;
     justify-content: start;
-    padding: 15px;
+    padding: 5%;
+    font-size: 1vw;
 }
 form img{
-    max-width: 100px;
     height: auto;
     padding: 5px;
-    margin-bottom: 10px;
+    width: 35%;
 }
 form{
     overflow: hidden; /* Para esconder partes da imagem que ultrapassam o contêiner */
     background-color: transparent;
     text-align: center;
-    width: 250px;
-    padding: 15px;
+    padding: 5%;
 }
 .form-group {
     text-align: center;
@@ -84,6 +64,7 @@ form{
     height: auto;
     margin-bottom: 15px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     gap: 10px;
 }
@@ -99,7 +80,7 @@ form{
 .form-group label{
     width: 30%;
     text-align: left;
-    padding: 6px 6px 6px 6px;
+    padding: 6px 6px 5px 6px;
     border-bottom: 1px solid #ccc;
     opacity: 0.5;
 
@@ -111,7 +92,8 @@ form{
 input:focus {
     outline: none;
 }
-#courses{
+select{
+    width: 100%;
     text-align: left;
     border: none;
     border-bottom: 1px solid #ccc;
@@ -180,4 +162,13 @@ input:focus {
 footer p{
     opacity: 0.3;
 }
+
+@media only screen and (max-width: 768px) {
+    .container{
+         display: flex;
+         justify-content: center;
+         width: 250px;
+     }
+    .extra-content{display: none;}
+ }
 

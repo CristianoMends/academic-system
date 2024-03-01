@@ -1,10 +1,8 @@
-package com.academic.system.model
+package com.academic.system.entity
 
 import com.academic.system.enums.CoursesNames
 import jakarta.persistence.*
 import java.time.LocalDate
-import java.time.LocalDateTime
-import java.util.*
 
 @Entity
 data class Users(
@@ -12,15 +10,17 @@ data class Users(
     val userId: Long,
     var name: String,
     var surname: String?,
+    @Column(unique = true)
     val email: String,
     val password:String,
     val courseName:String = CoursesNames.UNDEFINED.toString(),
-    val startDate: LocalDate,
+    val startYear: Int,
+    val startSemester:Int,
     val registrationDate: LocalDate,
     var lastAccessDate: LocalDate,
     var permissions: String,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "course_id")
-    val course:Course,
+    var course:Course?,
 )

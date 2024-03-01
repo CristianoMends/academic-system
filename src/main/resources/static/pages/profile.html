@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horários Semanais de Disciplinas (Editável)</title>
+    <link rel="stylesheet" href="../styles/profile.css">
+    <link rel="stylesheet" href="../styles/all.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <img src="https://www.ufc.br/images/_images/a_universidade/identidade_visual/brasao/brasao1_horizontal_cor_300dpi.png" alt="brasão ufc">
+            <nav>
+                <button id="user" class="button">{username}</button>
+                <button class="button">Logout</button>            
+            </nav>             
+    </header>
+    <section class="menu">
+        <a href="home.html">Home</a>
+        <a href="../pages/forum.html">Fórum</a>
+        <a href="#" class="active">Meu perfil</a>
+    </section>
+    <main>
+        <section id="addDisciplines">
+            <h2>Disciplinas</h2>
+            <p>Adicione aqui as suas disciplinas matriculadas no semestre atual</p>
+            <select name="selectDisciplines" id="selectDisciplines">
+                <option value="">Disciplina</option>
+                <option value="LP">LP</option>
+                <option value="APS">APS</option>
+                <option value="SO">SO</option>
+                <option value="RS">RS</option>
+                <option value="ED">ED</option>
+                <option value="MD">MD</option>
+            </select>
+            <table id="daily">
+                <tr>
+                    <th>Horário</th>
+                    <th>Seg</th>
+                    <th>Ter</th>
+                    <th>Qua</th>
+                    <th>Qui</th>
+                    <th>Sex</th>
+                </tr>
+                <tr id="abMorning">
+                    <td>08:00 - 10:00</td>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td><input type="checkbox" name="ter" id="ter"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="qua" id="qua"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="qui" id="qui"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="sex" id="sex"></input type="checkbox"></td>            
+                </tr>
+                <tr id="cdMorning">
+                    <td>10:00 - 12:00</td>
+                    <td><input type="checkbox" name="seg" id="seg"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="ter" id="ter"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="qua" id="qua"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="qui" id="qui"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="sex" id="sex"></input type="checkbox"></td>            
+                </tr>
+                <tr id="abAfternoon">
+                    <td>13:30 - 15:30</td>
+                    <td><input type="checkbox" name="seg" id="seg"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="ter" id="ter"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="qua" id="qua"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="qui" id="qui"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="sex" id="sex"></input type="checkbox"></td>            
+                </tr>
+                <tr id="cdAfternoon">
+                    <td>15:30 - 17:30</td>
+                    <td><input type="checkbox" name="seg" id="seg"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="ter" id="ter"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="qua" id="qua"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="qui" id="qui"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="sex" id="sex"></input type="checkbox"></td>            
+                </tr>
+                <tr id="abNight">
+                    <td>18:00 - 20:00</td>
+                    <td><input type="checkbox" name="seg" id="seg"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="ter" id="ter"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="qua" id="qua"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="qui" id="qui"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="sex" id="sex"></input type="checkbox"></td>            
+                </tr>
+                <tr id="cdNight">
+                    <td>20:00 - 22:00</td>
+                    <td><input type="checkbox" name="seg" id="seg"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="ter" id="ter"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="qua" id="qua"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="qui" id="qui"></input type="checkbox"></td>
+                    <td><input type="checkbox" name="sex" id="sex"></input type="checkbox"></td>            
+                </tr>
+            </table>
+            <Button id="btnAddDisciplines">Adicionar</Button>
+            <button id="finish">Finalizar</button>
+        </section>
+
+        <section id="daily">
+            
+                     
+        </section>
+        
+
+        <section id="statistics">
+            <h2>Minhas estatisticas</h2>
+            <div id="gradeSemesterChart"></div>
+            <div id="gradeDetailChart"></div>            
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy; Cristiano Mendes - 2024</p>
+    </footer>
+    <script src="../scripts/profile.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package com.academic.system.model
+package com.academic.system.entity
 
 import com.academic.system.enums.DisciplineStatus
 import jakarta.persistence.*
