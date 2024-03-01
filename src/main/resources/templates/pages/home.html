@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial - Sistema</title>
+    <title>Página Inicial</title>
     <link rel="stylesheet" href="/styles/home.css">
     <link rel="stylesheet" href="/styles/all.css">
 
@@ -12,15 +12,16 @@
     <header>
         <img src="https://www.ufc.br/images/_images/a_universidade/identidade_visual/brasao/brasao1_horizontal_cor_300dpi.png" alt="brasão ufc">
         <nav>
-            <button id="user" class="button">{username}</button>
-            <button class="button">Logout</button>            
+            <button id="btnUser" class="button">[[${userName}]]</button>
+            <button id="btnLoginOut" onclick="btnLoginOut(this)" class="button" >[[${loginOut}]]</button>
         </nav> 
     </header>
     <section class="menu">
-        <a href="#" class="active">Home</a>
-        <a href="/pages/forum.html">Fórum</a>
-        <a href="/pages/profile.html">Meu perfil</a>
+        <a class="active" onclick="navigateTo('home')">Home</a>
+        <a onclick="navigateTo('forum')">Fórum</a>
+        <a onclick="navigateTo('profile')">Meu perfil</a>
     </section>
+    
     <main>
         
         <section>
@@ -40,8 +41,16 @@
             </div>
         </section>
     </main>
+        <div id="customAlert" class="custom-alert">
+        <div class="alert-content">
+            <span class="close" onclick="closeCustomAlert()">&times;</span>
+            <p>Deseja confirmar esta ação?</p>
+            <button onclick="confirmAction()">Confirmar</button>
+        </div>
+    </div>
     <footer>
         <p>&copy; Cristiano Mendes - 2024</p>
     </footer>
+    <script src="/scripts/all.js"></script>
 </body>
 </html>

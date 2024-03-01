@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UFC Forum</title>
+    <title>Forum</title>
     <link rel="stylesheet" href="/styles/forum.css">
     <link rel="stylesheet" href="/styles/all.css">
 </head>
@@ -11,15 +11,16 @@
     <header>
         <img src="https://www.ufc.br/images/_images/a_universidade/identidade_visual/brasao/brasao1_horizontal_cor_300dpi.png" alt="brasão ufc">
         <nav>
-            <button id="user" class="button">{username}</button>
-            <button class="button">Logout</button>            
+            <button id="btnUser" class="button">[[${userName}]]</button>
+            <button id="btnLoginOut" onclick="btnLoginOut(this)" class="button" >[[${loginOut}]]</button>
         </nav> 
     </header>
     <section class="menu">
-        <a href="/pages/home.html">Home</a>
-        <a href="#" class="active">Fórum</a>
-        <a href="/pages/profile.html">Meu perfil</a>
+        <a onclick="navigateTo('home')">Home</a>
+        <a class="active" onclick="navigateTo('forum')">Fórum</a>
+        <a onclick="navigateTo('profile')">Meu perfil</a>
     </section>
+    
     
     <main>
         <section id="latest-discussions">
@@ -52,5 +53,6 @@
     <footer>
         <p>&copy; Cristiano Mendes - 2024</p>
     </footer>
+    <script src="/scripts/all.js"></script>
 </body>
 </html>

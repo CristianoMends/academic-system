@@ -57,7 +57,7 @@ loginForm.addEventListener("submit", function(event) {
 
 
 
-    fetch("/login", {
+    fetch("/login/user", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -72,7 +72,7 @@ loginForm.addEventListener("submit", function(event) {
         
             setTimeout(function() {
                 alertMessage.classList.remove('show');
-                window.location = '/main';
+                window.location = '/';
             }, 2000);
         } else {
             alertMessage.innerText = "Email ou senha inválidas. Por favor, tente novamente.";
