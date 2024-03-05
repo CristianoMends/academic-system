@@ -6,19 +6,20 @@
     <title>Forum</title>
     <link rel="stylesheet" href="/styles/forum.css">
     <link rel="stylesheet" href="/styles/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <header>
         <img src="https://www.ufc.br/images/_images/a_universidade/identidade_visual/brasao/brasao1_horizontal_cor_300dpi.png" alt="brasão ufc">
         <nav>
             <button id="btnUser" class="button">[[${userName}]]</button>
-            <button id="btnLoginOut" onclick="btnLoginOut(this)" class="button" >[[${loginOut}]]</button>
+            <button id="btnLoginOut" onclick="btnLoginOut(this)" class="material-symbols-outlined button" >[[${loginOut}]]</button>
         </nav> 
     </header>
     <section class="menu">
-        <a onclick="navigateTo('home')">Home</a>
-        <a class="active" onclick="navigateTo('forum')">Fórum</a>
-        <a onclick="navigateTo('profile')">Meu perfil</a>
+        <a href="#" onclick="navigateTo('home')">Home</a>
+        <a href="#" class="active" onclick="navigateTo('forum')">Fórum</a>
+        <a href="#" onclick="navigateTo('profile')">Meu perfil</a>
     </section>
     
     

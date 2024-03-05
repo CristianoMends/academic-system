@@ -8,11 +8,11 @@ data class Disciplines(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val disciplineId: Long,
     val name: String,
-    val workload: Int,
-    val credits: Int,
+    val time: String,
+    val day: String,
+    val place: String,
     val status: String = DisciplineStatus.INPROGRESS.toString(),
-    val semester: Int,
-    val grade: Float?,
+    val grade: Float? = null,
 
     @ManyToMany(mappedBy = "disciplines")
     val courses: Set<Course> = HashSet()

@@ -9,9 +9,7 @@ data class Course(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var courseId: Long? = null,
-
     val name:String,
-    val totalWorkload:Int = 0,
 
     @OneToMany(mappedBy = "course")
     val courseUsers: List<Users> = mutableListOf(),

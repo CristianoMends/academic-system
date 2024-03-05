@@ -63,7 +63,8 @@ function drawChart1() {
 const selectedDisciplines = [];
 
 document.getElementById("btnAddDisciplines").addEventListener('click',function(){
-  const disciplineName = document.getElementById("selectDisciplines").value;
+  const selectDisciplines = document.getElementById("selectDisciplines");
+  const disciplineName = selectDisciplines.value;
   const table = document.getElementById('daily');
 
   for (let i = 1; i < table.rows.length; i++) {
@@ -81,8 +82,8 @@ document.getElementById("btnAddDisciplines").addEventListener('click',function()
           cell.textContent = `${disciplineName}`;
 
           const discipline = {
-            dia: day,
-            horario: time,
+            day: day,
+            time: time,
             name: disciplineName
         };
 
@@ -94,3 +95,70 @@ document.getElementById("btnAddDisciplines").addEventListener('click',function()
   console.log(selectedDisciplines); // Exibe o array com os objetos das disciplinas selecionadas
     
 })
+
+document.getElementById("btnFinish").addEventListener('click',function(){
+
+fetch("/register/disciplines", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(selectedDisciplines)
+})
+.then(response => {
+    if (response.ok) {
+      alert('ok');
+    } else {
+      alert('erro');
+    }
+})
+.catch(error => console.error("Erro ao fazer login:", error));
+})
+
+function getDisciplines(select) {
+  fetch("/disciplines", {
+      method: "GET",
+      headers: {
+          "Content-Type": "application/json"
+      }
+  })
+  .then(response => {
+      if (response.ok) {
+          return response.json();
+      } else {
+          throw new Error('Erro ao obter disciplinas');
+      }
+  })
+  .then(data => {
+      for(d in data){
+        select.innerHtml += `
+        <option value="${d.name}">${d.name}</option>
+        `;
+      }
+      console.log(data);
+  })
+  .catch(error => {
+      console.error("Erro ao obter disciplinas:", error);
+  });
+}
+
+const selectDiscipline = document.getElementById('selectDiscipline');
+const gradeInput = document.getElementById('gradeInput');
+function addGrade(){
+
+  fetch("/register/disciplines", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ name:selectDiscipline.value, grade: gradeInput.value })
+})
+.then(response => {
+    if (response.ok) {
+      alert('ok');
+    } else {
+      alert('erro');
+    }
+})
+.catch(error => console.error("Erro ao fazer login:", error));
+}

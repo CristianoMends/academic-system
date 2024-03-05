@@ -17,17 +17,17 @@ class UserService(
     }
     fun registerUser(users:Users):Users{
         val course:Course? = when(users.courseName){
-            "ES" -> Course(name = "ES", totalWorkload = 3072, courseId = 1)
-            "EC" -> Course(name = "EC", totalWorkload = 3392, courseId = 2)
-            "RC" -> Course(name = "RC", totalWorkload = 2176, courseId = 3)
-            "SI" -> Course(name = "SI", totalWorkload = 3008, courseId = 4)
-            "CC" -> Course(name = "CC", totalWorkload = 3200, courseId = 5)
-            "DD" -> Course(name = "DD", totalWorkload = 3008, courseId = 6)
+            "ES" -> Course(name = "ES", courseId = 1)
+            "EC" -> Course(name = "EC", courseId = 2)
+            "RC" -> Course(name = "RC", courseId = 3)
+            "SI" -> Course(name = "SI", courseId = 4)
+            "CC" -> Course(name = "CC", courseId = 5)
+            "DD" -> Course(name = "DD", courseId = 6)
             else -> null
         }
         if (course == null) {throw RuntimeException("erro: curso inexistente")}
 
-        if (courseRepository.findByName(users.courseName) != null){
+        if (courseRepository.findByName(users.courseName) == null){
             val coursSaved: Course = courseRepository.save(course)
         }
         users.course = course

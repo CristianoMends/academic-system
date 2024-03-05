@@ -4,39 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Perfil</title>
-    <link rel="stylesheet" href="/styles/profile.css">
-    <link rel="stylesheet" href="/styles/all.css">
+    <link rel="stylesheet" href="../../static/styles/profile.css">
+    <link rel="stylesheet" href="../../static/styles/all.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <header>
         <img src="https://www.ufc.br/images/_images/a_universidade/identidade_visual/brasao/brasao1_horizontal_cor_300dpi.png" alt="brasão ufc">
         <nav>
             <button id="btnUser" class="button">[[${userName}]]</button>
-            <button id="btnLoginOut" onclick="btnLoginOut(this)" class="button" >[[${loginOut}]]</button>
+            <button id="btnLoginOut" onclick="btnLoginOut(this)" class="material-symbols-outlined button" >[[${loginOut}]]</button>
         </nav>             
     </header>
     <section class="menu">
-        <a onclick="navigateTo('home')">Home</a>
-        <a onclick="navigateTo('forum')">Fórum</a>
-        <a class="active" onclick="navigateTo('profile')">Meu perfil</a>
-    </section>
-    
+        <a href="#" onclick="navigateTo('home')">Home</a>
+        <a href="#" onclick="navigateTo('forum')">Fórum</a>
+        <a href="#" class="active" onclick="navigateTo('profile')">Meu perfil</a>
+    </section>    
     <main>
-        <section id="addDisciplines">
+        <article id="userData">
+            <section>
+                <h2>Meus dados</h2>
+                <p>Veja seus dados cadastrais</p>
+            </section>
+            <section>
+                <h3>Nome do Usuário:</h3>
+                <p>[[${name}]] [[${surname}]]</p>
+            </section>
+            <section>
+                <h3>E-mail:</h3>
+                <p>[[${email}]]</p>
+            </section>
+            <section>
+                <h3>Curso:</h3>
+                <p>[[${course}]]</p>
+            </section>
+        </article>
+        <form id="addDisciplines" style="display: flex;">
             <h2>Disciplinas</h2>
-            <p>Adicione aqui as suas disciplinas matriculadas no semestre atual</p>
-            <select name="selectDisciplines" id="selectDisciplines">
-                <option value="">Disciplina</option>
-                <option value="LP">LP</option>
-                <option value="APS">APS</option>
-                <option value="SO">SO</option>
-                <option value="RS">RS</option>
-                <option value="ED">ED</option>
-                <option value="MD">MD</option>
-            </select>
+            <p>Selecione a disciplina e seu respectivo horario, em seguida clique em adicionar</p>
+            <div>
+                <select name="selectDisciplines" id="selectDisciplines">
+                    <option value="">Disciplina</option>
+                    <option value="LP">LP</option>
+                    <option value="APS">APS</option>
+                    <option value="SO">SO</option>
+                    <option value="RS">RS</option>
+                    <option value="ED">ED</option>
+                    <option value="MD">MD</option>
+                </select>
+                <select name="" id="">
+                    <option value="">Local</option>
+                </select>
+            </div>
+
             <table id="daily">
                 <tr>
                     <th>Horário</th>
@@ -96,19 +118,39 @@
                 </tr>
             </table>
             <Button id="btnAddDisciplines">Adicionar</Button>
-            <button id="finish">Finalizar</button>
-        </section>
 
-        <section id="daily">
-            
-                     
-        </section>
+            <button id="btnFinish">Finalizar</button>
+        </form>
+        <section id="classSchedule"></section>
+
+        <section class="grades">
+            <section>
+                <h2>Notas</h2>
+                <p>Adicione suas medias no fim do semestre</p>
+            </section>
+<!--//---------------------------------------------------------------//-->
+
+            <div class="grade-form" id="gradeForm">
+                <label for="selectDiscipline">Disciplina:</label>
+                <select name="selectDiscipline" onclick="getDisciplines(this)" id="selectDiscipline">
+                    <option value="">selecione</option>
+                </select>
         
-
+                <label for="gradeInput">Nota:</label>
+                <input type="number" id="gradeInput" name="gradeInput" min="0" max="10">
+        
+                <button id="addGradeButton" onclick="addGrade()">Adicionar Nota</button>
+            </div>
+        </section>        
+<!--//---------------------------------------------------------------//-->
         <section id="statistics">
-            <h2>Minhas estatisticas</h2>
-            <div id="gradeSemesterChart"></div>
-            <div id="gradeDetailChart"></div>            
+            <section>
+                <h2>Estatisticas</h2>
+                <p>Veja suas estatisticas gerais e semestrais</p>
+            </section>
+            
+            <div id="gradeSemesterChart" class="chart"></div>
+            <div id="gradeDetailChart" class="chart"></div>            
         </section>
 
     </main>
@@ -116,6 +158,6 @@
         <p>&copy; Cristiano Mendes - 2024</p>
     </footer>
     <script src="/scripts/all.js"></script>
-    <script src="/scripts/profile.js"></script>
+    <script src="../../static/scripts/profile.js"></script>
 </body>
 </html>

@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body,html{
     margin: 0;
     height: 100%;
@@ -105,12 +111,22 @@ header .button{
     font-weight: bold;
 }
 
-button {
+#customAlert button {
     padding: 10px 20px;
-    margin: 10px;
-    background-color: #4CAF50;
+    width: 90%;
+    margin-top: 1px;
+    background-color: rgb(0, 83, 134);
     color: white;
     border: none;
     cursor: pointer;
 }
 /*Alert---------------------------------------------------*/
+
+header .material-symbols-outlined {
+font-size: 100%;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 24
+}

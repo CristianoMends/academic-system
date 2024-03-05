@@ -17,12 +17,10 @@ class ViewController{
         val user: UserView? = CurrentUser.user
 
         if(user == null) {
-            model.addAttribute("btnLoginOut","btnLogin")
             model.addAttribute("userName", "...")
             model.addAttribute("loginOut","Login")
 
         }else{
-            model.addAttribute("btnLoginOut","btnLogout")
             model.addAttribute("userName",user.name)
             model.addAttribute("loginOut","Logout")
 
@@ -49,8 +47,11 @@ class ViewController{
 
         if(user == null) {
             model.addAttribute("userName", "...")
+            model.addAttribute("loginOut","Login")
+
         }else{
             model.addAttribute("userName",user.name)
+            model.addAttribute("loginOut","Logout")
         }
 
         return "pages/forum"
@@ -64,10 +65,14 @@ class ViewController{
         if(user == null) {
             model.addAttribute("userName", "...")
             model.addAttribute("loginOut","Login")
+
         }else{
             model.addAttribute("userName",user.name)
             model.addAttribute("loginOut","Logout")
-
+            model.addAttribute("name",user.name)
+            model.addAttribute("email",user.email)
+            model.addAttribute("surname",user.surname)
+            model.addAttribute("course",user.courseName)
         }
 
         return "pages/profile"

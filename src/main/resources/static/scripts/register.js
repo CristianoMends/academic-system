@@ -5,7 +5,7 @@ const btnLogin = document.getElementById('btnLogin');
 
 btnLogin.addEventListener('click', function(event){
     event.preventDefault();
-    window.location = "/index";
+    window.location = "/login";
 });
 
 //--------------------------------------------------------------
@@ -49,7 +49,7 @@ registerForm.addEventListener("submit", function(event) {
         
             setTimeout(function() {
                 alertMessage.classList.remove('show');
-                window.location.href = '/index';
+                window.location.href = '/login';
             }, 2000);
         } else {
             alertMessage.innerText = "Ocorreu um erro, tente novamente!.";
